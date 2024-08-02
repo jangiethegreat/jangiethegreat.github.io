@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Side Navbar</title>
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="/portfolio/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
 
 </head>
@@ -106,18 +106,48 @@
     </div>
 
     <div class="main active">
-        <div class="topbar d-flex justify-content-between align-items-center">
-            <div class="toggle">
-                <ion-icon name="menu-outline"></ion-icon>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle">
 
-            </div>
-        </div>
-        @yield('content')
-    </div>
+            <div class="topbar d-flex justify-content-between align-items-center">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle">
+                </div>
 
+                
+            </div>
+
+            <div class="profile__container">
+                <div class="section">
+                    <div class="section__container">
+                        <div class="content">
+                            <p class="subtitle">HELLO</p>
+                            <h1 class="profile__title">
+                                I'm <span>Jang<br />a</span> Web Developer
+                            </h1>
+                            <p class="description">
+                                Welcome to my web developer portfolio! I'm Jang, a skilled and
+                                creative web developer with a passion for creating beautiful,
+                                responsive, and user-friendly websites. I've worked on a variety of
+                                web projects, ranging from personal blogs to e-commerce platforms.
+                            </p>
+                            <div class="action__btns">
+                                <button class="hire__me">Hire Me</button>
+                                <button class="portfolio">Portfolio</button>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="image">
+                                <img src="/portfolio/images/profile-removebg.png" alt="Profile Image" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
     </div>
 
 
@@ -129,10 +159,9 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/darkmode.js') }}"></script>
+    <script src="/portfolio/js/app.js"></script>
+    <script src="/portfolio/js/darkmode.js"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </body>
 
