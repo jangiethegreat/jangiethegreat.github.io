@@ -1,0 +1,472 @@
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palatino+Linotype:wght@400;700&display=swap'); /* Import Palatino Linotype */
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+BE+VLG:wght@100..400&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Playwrite+BE+VLG:wght@100..400&family=Zain:wght@200;300;400;700;800;900&display=swap');
+/* =======globals=========== */
+* {
+    font-family: var( --font-poppins), sans-serif; /* Default to Ubuntu font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --white-text: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --primary-color: #000;
+    --primary-color-dark: #000;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #faf5ff;
+    --black:#000;
+    --neumorph-shadow-light: rgba(255, 255, 255, 1); /* Default light shadow */
+    --neumorph-shadow-dark-mode-light: rgba(255, 255, 255, 0.1);
+    --light-bg: #e0e0e0;
+    --light-shadow: #ffffff;
+    --dark-shadow: #a3a3a3;
+    --text-color: #333;
+    --accent-color: #4caf50;
+    --profile-spinner: #494F55;
+
+
+    --max-width: 1200px;
+    --font-palatino: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Define variable for Palatino Linotype */
+    --font-ubuntu: 'Ubuntu', sans-serif; /* Define variable for Ubuntu font */
+    --font-poppins: 'Poppins', sans-serif; /* Define variable for Poppins font */
+    --font-playfair: 'Playfair Display', serif; /* Define variable for Playfair Display font */
+    --font-anton:"Anton", sans-serif;
+    --font-playwrite: 'Playwrite BE VLG', sans-serif;
+    --font-pacifico: 'Pacifico', cursive;
+
+    --side-nav:#333;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+}
+
+.container{
+    position: relative;
+    width: 100%;
+  
+}
+/* ==========navigation============ */
+.navigation{
+    position: fixed;
+    width:300px;
+    height:100%;
+    background: var(--side-nav);
+    border-left:10px solid var(--side-nav);
+    transition: 0.5s;
+    overflow:hidden;
+}
+
+.navigation.active{
+    width:80px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+}
+
+.navigation ul li{
+    position:relative;
+    width:100%;
+    list-style:none;
+    border-top-left-radius: 30px ;
+    border-bottom-left-radius: 30px ;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background-color: var(--extra-light);
+
+}
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: var(--white-text);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+    color: var(--text-dark);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75rem;
+}
+
+
+.navigation ul li a .title{
+    position:relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+    content:"";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width:50px;
+    height:50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--extra-light);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+    content:"";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width:50px;
+    height:50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--extra-light);
+    pointer-events: none;
+}
+
+/* ============main================ */
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height:100vh;
+    background-color: var(--extra-light);
+    transition: 0.5s; 
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--text-dark);
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+/* Dark Mode*/
+#toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#toggle::before,
+#toggle::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: all 0.5s ease-in;
+    
+}
+
+#toggle::before {
+    background-image: url('/portfolio/images/moon.png'); /* Sun image */
+
+
+}
+
+#toggle::after {
+    background-image: url('/portfolio/images/sunny.png'); /* Sun image */
+    opacity: 0;
+   
+
+
+}
+
+#toggle:checked::before {
+    opacity: 0;
+}
+
+#toggle:checked::after {
+    opacity: 1;
+    
+}
+
+
+  .dark-mode {
+    --primary-color: #fff; /* Light Purple */
+    --primary-color-dark: #f1f5f9; 
+    --secondary-color: #facc15; /* Bright Yellow */
+    --text-dark: #f1f5f9; /* Light Gray */
+    --text-light: #f1f5f9; /* Medium Gray */
+    --extra-light: #333; /* Dark Background */
+    --white-text:#000;
+    --side-nav:#faf5ff;
+    --profile-spinner:#f1f5f9;
+
+
+    --light-bg: #2b2b2b;
+    --light-shadow: #3c3c3c;
+    --dark-shadow: #1a1a1a;
+    --text-color: #f0f0f0;
+    --accent-color: #4caf50;
+    --neumorph-shadow-light: rgba(0, 0, 0, 0.15); /* Default light shadow */
+    --neumorph-shadow-dark-mode-light: rgba(0, 0, 0, 0.5);;
+}
+
+.profile__container{
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    background-color: var(--extra-light);
+}
+
+.section__container {
+    min-height: 60vh;
+    max-width: 1600px;
+    margin: auto;
+    padding: 2rem 1rem 1rem; /* Adjusted padding: top right bottom left */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-palatino), serif; /* Use Palatino Linotype font */
+
+}
+
+.profile__title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-family: var(--font-palatino), serif; /* Use Palatino Linotype font */
+
+}
+
+.title span {
+    font-weight: 600;
+}
+
+.description {
+    line-height: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.action__btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.action__btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.hire__me {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+}
+
+.hire__me:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+    color: #000;
+}
+
+.portfolio:hover {
+    background-color: var(--primary-color-dark);
+    color: var(--white-text);
+}
+
+.box {
+    display: grid;
+    margin: auto; /* Center within its parent */
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: repeating-conic-gradient(from var(--a), var(--profile-spinner) 0%, var(--profile-spinner) 5%, transparent 5%, transparent 40%, var(--profile-spinner) 50%);
+    animation: animate 4s linear infinite;
+    border-radius: 50%;
+}
+
+.image {
+    display: grid;
+    place-items: center;
+    z-index: 1; /* Ensure the image is above the border */
+}
+
+.image img {
+    width: min(25rem, 90%);
+    border-radius: 100%;
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate {
+    0% {
+        --a: 0deg;
+    }
+    100% {
+        --a: 360deg;
+    }
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), var(--profile-spinner) 0%, var(--profile-spinner) 5%, transparent 5%, transparent 40%, var(--profile-spinner) 50%);
+    animation: animate 4s linear infinite;
+    animation-delay: -1s;
+    border-radius: 50%;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--extra-light);
+    border-radius: 50%;
+    border: 8px solid var(--extra-light);
+}
+
+
+
+@media (max-width: 750px) {
+    .section__container {
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        margin: auto;        
+        width: 300px;
+        height: 300px;
+        grid-area: 1/1/2/2;
+
+    }
+
+    .image img {
+        width: 90%;
+    }
+
+    .profile__title {
+        font-size: 1.5rem;
+    }
+
+    .profile__title span {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 0.875rem;
+        padding: 1rem;
+    }
+
+    .action__btns {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .hire__me, .portfolio {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+        margin: 0.5rem;
+
+    }
+}
