@@ -471,12 +471,158 @@ body{
     }
 }
 
-.card {
-    width: 300px;
-    height: 200px;
-    margin: 10px;
+
+.github {
+    max-width: 600px; /* Limit the container width to 600px */
+    margin: 0 auto;   /* Center the container horizontally */
+    background-color: #dbdad7;
 }
+
+.github img {
+    width: 100%;       /* Make the image responsive */
+    height: auto;      /* Maintain the aspect ratio */
+    display: block;    /* Remove any extra space below the image */
+}
+.skills__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 5px;
+    position: relative;
+    width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.skills__title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    font-family:var(--font-pacifico), sans-serif;
+    background: var(--extra-light);
+    width:500px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px #00000099;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .skills__title {
+        font-size: 1.2em;
+        width: 200px;
+    }
+    .github img
+    {
+        width: 350px;
+        height: 100px;
+    }
+
+
+}
+
+@media (max-width: 400px) {
+    .skills__title {
+        font-size: 1em;
+        width: 200px;
+    }
+
+}
+
+.card__container__parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    padding: 20px;
+}
+
+.container__card {
+    padding: 10px;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+}
+
+.card {
+    width: 125px;
+    height: 140px;
+    background: var(--extra-light);
+    border-radius: 10px;
+    box-shadow: 0 1px 5px #00000099;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card-title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #333;
+}
+
 .card img {
-    height: 120px; /* Adjust as needed */
+    width: 100%;
+    height: auto;
+    max-height: 80px;
     object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+    .card {
+        width: 60px;
+        height: 100px;
+    }
+
+    .card-title {
+        font-size: 0.7em;
+        top: 5px;
+        right: 5px;
+    }
+
+    .card img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        width: 100%;
+        height: 100px;
+    }
+
+    .card img {
+        max-height: 62px;
+    }
 }
