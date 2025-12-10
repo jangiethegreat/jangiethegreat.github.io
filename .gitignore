@@ -1,0 +1,70 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if you add any npm packages)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Build files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache
+
+# Personal notes and drafts
+notes.md
+TODO.md
+draft/
+
+# Documentation files (markdown)
+*.md
+!README.md
+
+# Mac specific
+__MACOSX/
+
+# Windows specific
+$RECYCLE.BIN/
+
+# Sensitive information (if any)
+config.local.js
+secrets/
+credentials/

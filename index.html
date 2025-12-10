@@ -3,14 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http:equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio
-    </title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jang - Full Stack Developer specializing in Laravel, PHP, and modern web technologies. View my portfolio showcasing web applications, REST APIs, and system development projects.">
+    <meta name="keywords" content="Full Stack Developer, Laravel Developer, PHP Developer, Web Developer, System Developer, REST API, MySQL, Portfolio">
+    <meta name="author" content="Jang">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jang - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Skilled Full Stack Developer crafting beautiful, responsive web applications">
+    <meta property="og:url" content="https://jangiethegreat.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    
+    <title>Jang | Full Stack Developer Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 </head>
 
@@ -21,7 +39,7 @@
         <div class="navigation active">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="#home">
                         <span class="icon">
                             <ion-icon name="logo-github"></ion-icon>
                         </span>
@@ -30,7 +48,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="#home" data-nav="home">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -39,16 +57,40 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="#experience" data-nav="experience">
                         <span class="icon">
-                            <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                            <ion-icon name="briefcase-outline"></ion-icon>
                         </span>
-                        <span class="title">Portfolio</span>
+                        <span class="title">Experience</span>
                     </a>
                 </li>
 
-                
+                <li>
+                    <a href="#skills" data-nav="skills">
+                        <span class="icon">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                        </span>
+                        <span class="title">Skills</span>
+                    </a>
+                </li>
 
+                <li>
+                    <a href="#projects" data-nav="projects">
+                        <span class="icon">
+                            <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                        </span>
+                        <span class="title">Projects</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" data-nav="contact">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="title">Contact</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
@@ -61,184 +103,260 @@
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-                <div>
-                    <input type="checkbox" id="toggle">
+                <div class="topbar__right">
+                    <button class="scroll-to-top" id="scrollTop" title="Back to top">
+                        <ion-icon name="arrow-up-outline"></ion-icon>
+                    </button>
+                    <input type="checkbox" id="toggle" aria-label="Toggle dark mode">
                 </div>
-
-                
             </div>
 
-            <div class="profile__container">
+            <div class="profile__container" id="home">
                 <div class="section">
                     <div class="section__container">
                         <div class="content">
-                            <p class="subtitle">HELLO</p>
-                            <h1 class="profile__title">
-                                I'm <span>Jang<br />a</span> Full Stack Developer
+                            <p class="subtitle" data-aos="fade-up">HELLO THERE 👋</p>
+                            <h1 class="profile__title" data-aos="fade-up" data-aos-delay="100">
+                                <!-- Content loaded from config.js -->
                             </h1>
-                            <p class="description">
-                                Welcome to my developer portfolio! I'm Jang, a skilled and
-                                creative Full stack developer with a passion for creating beautiful,
-                                responsive, and user-friendly websites. I've worked on a variety of
-                                web and mobile projects, ranging from personal blogs, e-commerce platforms to Web Systems.
+                            <p class="description" data-aos="fade-up" data-aos-delay="200">
+                                <!-- Content loaded from config.js -->
                             </p>
-                            <div class="action__btns">
-                                <button class="hire__me">Hire Me</button>
-                                <button class="portfolio">Portfolio</button>
+                            <div class="stats-row" data-aos="fade-up" data-aos-delay="300">
+                                <!-- Stats loaded from config.js -->
+                            </div>
+                            <div class="action__btns" data-aos="fade-up" data-aos-delay="400">
+                                <a href="#contact" class="hire__me">
+                                    <span>Let's Work Together</span>
+                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                </a>
+                                <a href="#projects" class="portfolio">
+                                    <span>View Projects</span>
+                                    <ion-icon name="folder-open-outline"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="social-links" data-aos="fade-up" data-aos-delay="500">
+                                <!-- Social links loaded from config.js -->
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
                             <div class="image">
-                                <img src="images/profile-removebg.png" alt="Profile Image" />
+                                <img src="images/profile-removebg.png" alt="Jang - Full Stack Developer Profile" loading="lazy" />
                             </div>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            <div class="skills__container">
-                <!-- <div class="github">
-                    <img src="http://ghchart.rshah.org/00FF00/jangiethegreat" alt="jangiethegreat's Github chart" />
 
-                </div> -->
-       
+            <!-- Floating Particles Background -->
+            <div class="particles-container" aria-hidden="true">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
             </div>
 
-            <div class="card__container__parent">
-                <div class="container__card">
-                    <div class="category-title">Front End Development</div>
-                    <div class="cards">
-                        <div class="card">
-                            <div class="card-title">JavaScript</div>
-                            <img src="images/js.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Vue</div>
-                            <img src="images/Vue.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Bootstrap</div>
-                            <img src="images/Bootstrap.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">HTML5</div>
-                            <img src="images/html.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">CSS3</div>
-                            <img src="images/css3.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">React</div>
-                            <img src="images/React_(web_framework)-Logo.wine.png" alt="Laravel Logo">
-                        </div>
-                        
-                    </div>
+            <div class="experience__container" id="experience">
+                <div class="experience__header" data-aos="fade-up">
+                    <h2 class="experience__title">Work Experience</h2>
+                    <p class="experience__subtitle">My Professional Journey</p>
                 </div>
-        
-                <div class="container__card">
-                    <div class="category-title">Back End Development</div>
-                    <div class="cards">
-                        <div class="card">
-                            <div class="card-title">Laravel</div>
-                            <img src="images/Laravel.png" alt="Laravel Logo">
+
+                <div class="timeline">
+                    <!-- Current Role - Freelance -->
+                    <div class="timeline__item timeline__item--active" data-aos="fade-right" data-aos-delay="100">
+                        <div class="timeline__marker">
+                            <div class="timeline__dot"></div>
                         </div>
-                        <div class="card">
-                            <div class="card-title">PHP</div>
-                            <img src="images/PHP.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Python</div>
-                            <img src="images/Python.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Node</div>
-                            <img src="images/Node.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Java</div>
-                            <img src="images/Java.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Kotlin</div>
-                            <img src="images/Kotlin.png" alt="Laravel Logo">
+                        <div class="timeline__card">
+                            <div class="timeline__badge">Current</div>
+                            <h3 class="timeline__role">Freelance Developer</h3>
+                            <p class="timeline__company">Self-Employed</p>
+                            <p class="timeline__period">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                October 2023 – Present
+                            </p>
+                            <ul class="timeline__responsibilities">
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Delivering custom web applications and solutions for diverse clients</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Specializing in full-stack development with Python, Laravel, PHP, and modern JavaScript frameworks</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Managing end-to-end project lifecycle from requirements gathering to deployment</span>
+                                </li>
+                            </ul>
+                            <div class="timeline__tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">REST API</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-        
-                <div class="container__card">
-                    <div class="category-title">Hosting & Database</div>
-                    <div class="cards">
-                        <div class="card">
-                            <div class="card-title">Apache</div>
-                            <img src="images/Apache_HTTP_Server-Logo.wine.png" alt="Laravel Logo">
+
+                    <!-- System Developer Role -->
+                    <div class="timeline__item" data-aos="fade-left" data-aos-delay="200">
+                        <div class="timeline__marker">
+                            <div class="timeline__dot"></div>
                         </div>
-                        <div class="card">
-                            <div class="card-title">Nginx</div>
-                            <img src="images/Nginx-Logo.wine.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">MySQL</div>
-                            <img src="images/MySQL-Logo.wine.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Redis</div>
-                            <img src="images/Redis-Logo.wine.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">MongoDB</div>
-                            <img src="images/MongoDB-Logo.wine.png" alt="Laravel Logo">
-                        </div>                 
-                    </div>
-                </div>
-        
-                <div class="container__card">
-                    <div class="category-title">Dev Ops Tools</div>
-                    <div class="cards">
-                        <div class="card">
-                            <div class="card-title">Github</div>
-                            <img src="images/GitHub-Logo.wine.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">Git</div>
-                            <img src="images/git.png" alt="Laravel Logo">
-                        </div>
-                         <div class="card">
-                            <div class="card-title">Android Studio</div>
-                            <img src="images/Android_Studio.png" alt="Laravel Logo">
-                        </div>
-                         <div class="card">
-                            <div class="card-title">Visual Code</div>
-                            <img src="images/VSCODE.png" alt="Laravel Logo">
-                        </div>
-                        <div class="card">
-                            <div class="card-title">NPM</div>
-                            <img src="images/npm.png" alt="Laravel Logo">
+                        <div class="timeline__card">
+                            <h3 class="timeline__role">System Developer</h3>
+                            <p class="timeline__company">ACMSI</p>
+                            <p class="timeline__period">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                October 2023 – January 2025
+                            </p>
+                            <ul class="timeline__responsibilities">
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Developed and maintained web applications using Laravel, PHP, and MySQL</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Built and integrated REST APIs for mobile apps and internal systems</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Collaborated with a small development team to design features, solve issues, and deliver stable releases</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Designed scalable database schemas and optimized frequently queried tables</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Handled deployment on in-house servers, including setup of VPN, environment configuration, and system monitoring</span>
+                                </li>
+                                <li>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <span>Supported day-to-day operations such as report automation, data processing, and troubleshooting system issues</span>
+                                </li>
+                            </ul>
+                            <div class="timeline__tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">REST API</span>
+                                <span class="tech-badge">DevOps</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="skills__container" id="skills">
+                <div class="skills__header" data-aos="fade-up">
+                    <h2 class="skills__title">Technical Skills</h2>
+                    <p class="skills__subtitle">Technologies I work with</p>
+                </div>
+                
+                <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Skills loaded from config.js -->
+                </div>
+            </div>
+
+            <div class="projects__container" id="projects">
+                <div class="projects__header" data-aos="fade-up">
+                    <h2 class="projects__title">Featured Projects</h2>
+                    <p class="projects__subtitle">Some of my recent work</p>
+                </div>
+
+                <div class="projects-grid" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Projects loaded from config.js -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact__container" id="contact">
+                <div class="contact__header" data-aos="fade-up">
+                    <h2 class="contact__title">Get In Touch</h2>
+                    <p class="contact__subtitle">Let's build something amazing together</p>
+                </div>
+
+                <div class="contact__content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact__info">
+                        <!-- Contact cards loaded from config.js -->
+                    </div>
+
+                    <div class="contact__form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span>Send Message</span>
+                                <ion-icon name="send-outline"></ion-icon>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer__content">
+                    <p id="footer-text"><!-- Footer text loaded from config.js --></p>
+                    <div class="footer__links">
+                        <a href="#home">Home</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </footer>
+            
             
 
 
     </div>
-    <!-- ionicons -->
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <!-- ionicons -->
+    
+    <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- GitHub Calendar -->
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 
+    <!-- Custom Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/content-loader.js"></script>
     <script src="js/app.js"></script>
     <script src="js/darkmode.js"></script>
     <script src="js/github.js"></script>
 
-    <!-- <script src="/portfolio/js/card-effect.js"></script> -->
-
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: ANIMATION.duration,
+            easing: ANIMATION.easing,
+            once: ANIMATION.once,
+            offset: ANIMATION.offset
+        });
+    </script>
 
 </body>
-
-
 
 </html>
